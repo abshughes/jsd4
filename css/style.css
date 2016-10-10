@@ -389,6 +389,10 @@ section.section {
 	display: table-cell;
 	vertical-align: right;
 	line-height: 60px;
+	font-size: 24px;
+	color: #fff;
+	font-weight: 900;
+	text-shadow: none;
 }
 
 .navbar .navbar-nav > .active > a {
