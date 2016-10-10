@@ -359,26 +359,6 @@ section.section {
 	padding-bottom:0;
 }
 
-.nav li {
-	height: 100%;
-	line-height: 100%;
-	margin-bottom: 0;
-	vertical-align: middle;
-	padding-bottom:30px;
-}
-
-.nav>li>a {
-	display: table-cell;
-	height: 100%;
-	line-height: 100%;
-	vertical-align: middle;
-	color: #fff;
-	font-weight: 700;
-	font-size: 13 px;
-	letter-spacing: .1em;
-	text-transform: uppercase;
-}
-
 
 h1 a.navbar-brand {
 	font-size: 24px;
