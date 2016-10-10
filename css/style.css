@@ -363,6 +363,7 @@ section.section {
 	height: 100%;
 	line-height: 100%;
 	margin-bottom: 0;
+	vertical-align: middle;
 	padding-bottom:0;
 }
 
