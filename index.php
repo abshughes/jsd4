@@ -1,1 +1,1 @@
-<?php header( 'Location: /starting page/homework/index.html' ) ;  ?>
+<?php header( 'Location: /homeowork/starting page/index.html' ) ;  ?>
