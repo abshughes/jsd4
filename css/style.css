@@ -1,10 +1,5 @@
 /* ==== Google font ==== */
 @import url('http://fonts.googleapis.com/css?family=Lato:400,300,700,900');
-/* === fontawesome === */
-@import url('font-awesome.css');
-/* ==== overwrite bootstrap standard ==== */
-@import url('overwrite.css');
-@import url('animate.css');
 /*==========================================================================
   General
   ========================================================================== */
@@ -373,7 +368,6 @@ h1 a.navbar-brand {
 	vertical-align: middle;
 	line-height: 60px;
 }
-
 
 .navbar-toggle {
 	padding: 0;
@@ -889,11 +883,4 @@ Media queries
 		padding-top: 80px;
 	}
 	
-	.team-member,.col-lg-4 {
-		margin-bottom: 30px;
-	}
-	
-	.stats .col-md-3 {
-		margin-bottom: 30px;
-	}
 }
