@@ -387,7 +387,9 @@ section.section {
 .navbar-nav {
 	float: right;
 	margin-bottom: 0;
-	padding-bottom:0;	
+	padding-bottom:0;
+	line-height: 60px;
+	padding: 0;
 }
 
 .navbar .navbar-nav > .active > a {
