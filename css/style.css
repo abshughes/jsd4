@@ -344,8 +344,8 @@ section.section {
   --- Header & menu ----
 =========================== */
 .navbar {
-	line-height: 60px;
-	height: 60px;
+	line-height: 40px;
+	height: 40px;
 	background-color: rgba(0,0,0,0.3);
 	display: block;
 	vertical-align: middle;
@@ -373,7 +373,7 @@ section.section {
 	vertical-align: middle;
 	color: #fff;
 	font-weight: 700;
-	font-size: 13px;
+	font-size: 12	px;
 	letter-spacing: .1em;
 	text-transform: uppercase;
 }
