@@ -8,7 +8,7 @@ stringOneDef="bottles of beer on the wall."
 stringTwo="Take one down and pass it around"
 
 
-for (i = 1; i < 99; i++ ) {
+for (i = 1; i < 100; i++ ) {
 	beerNumber=100-i;
 	console.log(String(beerNumber)[String(beerNumber).length-1]);
 	console.log(String(beerNumber)[String(beerNumber).length-1]=="1");
