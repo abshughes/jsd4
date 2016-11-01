@@ -64,3 +64,4 @@ button.addEventListener('click', refreshCart)
 // complete list at MDN list events
 // https://developer.mozilla.org/en-US/docs/Web/Events
 
+// Each event has  type and target

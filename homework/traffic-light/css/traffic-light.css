@@ -68,10 +68,12 @@ button {
 	box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2);
 	transition: background-color 150ms;
 }
+
 .stop-light {
 	background-color: rgb(209, 43, 5);
 	box-shadow: 0 10px 40px rgba(209, 43, 5, 0.4);
 }
+
 .slow-light {
 	background-color: rgb(255, 240, 47);
 	box-shadow: 0 10px 40px rgba(255, 240, 47, 0.4);

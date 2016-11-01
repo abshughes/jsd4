@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giphy API</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="giphy.css">
+</head>
+<body>
+<h1> Giphy API </h1>
+
+<h1> First Cat</h1>
+<p> We use ids to be able to approach different cats as different elements </p>
+<p> First step: get source from DOMinto JS variable </p>
+<p> Second step: Template function
+<p> Third Step: pass json data to template function</p>
+
+<script id='gif-template' type="text/x-handlebars-template">
+	
+	{{#each data}}
+		<div class='gif' id='{{id}}'>
+			<h2>{{id}}</h2>
+			<img src='{{images.original.url}}'>
+			<a href='{{url}}'>{{url}}</a>
+			<p> Rating: <span>{{rating}}</span>
+			</p>
+		</div>
+	{{/each}}
+</script>
+
+<h1> Second Cat for Reference </h1>
+
+		<div class='gif'>
+
+			<h2>FiGiRei2ICzzG</h2>
+			<img src='http://media2.giphy.com/media/FiGiRei2ICzzG/giphy.gif'>
+			<a href='http://giphy.com/gifs/funny-cat-FiGiRei2ICzzG'>http://giphy.com/gifs/funny-cat-FiGiRei2ICzzG</a>
+			
+			<p> Rating: 
+				<span>g</span>
+			</p>
+
+		</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js">
+</script>
+<script src="giphy.js"></script>
+</body>
+</html>

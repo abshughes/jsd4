@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>title is here</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="index.css">
+	<script src="handlebars.js"></script>
+</head>
+<body>
+	<div id='annadata'></div>
+	<script type="text/javascript">
+	
+	var myInfo = "<p> My name is {{name}} and I live at {{street}} in {{city}}, {{state}}</p>";
+	
+	var template = Handlebars.compile(myInfo);
+	
+	var data =template({name: 'Anna', 
+						street:'mystreet', 
+						city: 'Santa Cruz', 
+						state: 'CA'});
+
+	document.getElementById('annadata').innetHTML+=data
+	</script>
+</body>
+</html>

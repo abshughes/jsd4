@@ -1,0 +1,36 @@
+ul {
+	color:red;
+}
+
+
+li {
+	width: 100px;
+	height: 100px;
+	margin: 20px auto;
+	border-radius: 100%;
+	border: 1px solid black;
+	list-style-type: none
+}
+
+.red {
+	background:red
+}
+
+.navy {
+	background:navy
+}
+
+.teal {
+	background:teal
+}
+
+.steelblue {
+	background:steelblue
+}
+
+
+.white {
+	background:white
+}
+
+
