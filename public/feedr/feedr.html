@@ -18,11 +18,11 @@
       <a href="#"><h1>Feedr</h1></a>
       <nav>
         <ul>
-          <li><a href="#">News Source: <span>Source Name</span></a>
+          <li><a href="#">List of feeds by animal</a>
             <ul>
-                <li id='button-guardian'><a href="#">Guardian</a></li>
-
-
+                <li id='button-seaotters-guardian'><a href="#">Sea Otters</a></li>
+                <li id='button-polarbears-guardian'><a href="#">Polar Bears</a></li>
+                <li id='button-sloths-guardian'><a href="#">Sloth</a></li>
             </ul>
           </li>
         </ul>
@@ -35,21 +35,70 @@
     </div>
   </header>
   
+
+<script id='popUp' type="text/x-handlebars-template">
+  
+  {{#each response.results}}
+  
   <div id="popUp" class="loader hidden">
     <a href="#" class="closePopUp">X</a>
     <div class="container">
-      <h1>Article title here</h1>
+      <h1>{{webTitle}}</h1>
       <p>
-        Article description/content here.
+        {{webTitle}}
       </p>
-      <a href="#" class="popUpAction" target="_blank">Read more from source</a>
+      <a href="#" class="popUpAction" target="_blank">{{webTitle}}</a>
     </div>
   </div>
-  <div id="main" class="container"></div>
+  
+  {{/each}}
+
+</script>
+<div id="main" class="container"></div>
+<script id='news-seaotters-guardian' type="text/x-handlebars-template">
 
 
-<script id='news-guardian' type="text/x-handlebars-template">
+  {{#each response.results}}
+    <article class="article" id="{{id}}">
+      <div class="thumbnail">
+        <img src="{{fields.thumbnail}}" alt="icon" />
+      </div>
+      <div class="articleContent">
+          <a href="#"><h3>{{webTitle}}</h3></a>
+      </div>
+      <div class="clearfix"></div>
+    </article>
+  {{/each}}
 
+</script>
+
+<script id="popUpTemplate" type="text/x-handlebars-template">
+  
+      <h1>{{webTitle}}</h1>
+      <p>
+        {{webTitle}}
+      </p>
+      <a href="{{url}}" class="popUpAction" target="_blank">Read more from source</a>
+</script>
+
+
+<script id='news-polarbears-guardian' type="text/x-handlebars-template">
+
+  {{#each response.results}}
+    <article class="article" id="{{id}}">
+      <div class="thumbnail">
+        <img src="{{fields.thumbnail}}" alt="icon" />
+      </div>
+      <div class="articleContent">
+          <a href="#"><h3>{{webTitle}}</h3></a>
+      </div>
+      <div class="clearfix"></div>
+    </article>
+  {{/each}}
+
+</script>
+
+<script id='news-sloths-guardian' type="text/x-handlebars-template">
 
   {{#each response.results}}
     <article class="article" id="{{id}}">
