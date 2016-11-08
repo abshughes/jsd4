@@ -1,85 +1,84 @@
 // Elements from HTML
 
-// Buttons
-var guardianSeaOttersButton = document.querySelector("#button-seaotters-guardian");
-var guardianPolarBearsButton = document.querySelector("#button-polarbears-guardian");
-var guardianSlothsButton = document.querySelector("#button-sloths-guardian");
-
-
-//Elements
+// Elements
+var guardianButton = document.querySelector("#button-guardian");
 var main = document.querySelector("#main");
 var popUp = document.querySelector("#popUp");
-var article = document.querySelector("#article");
+var popUpContainer = document.querySelector("#popUp .container");
+var closePopUp = document.querySelector(".closePopUp")
+var searchButton=document.querySelector('#searchButton')
+var searchField=document.querySelector('#search')
+var searchItem=document.querySelector('#formInput');
 
+//Templates
+var guardianNews = document.querySelector("#news-guardian");
+var guardianPopUp = document.querySelector("#news-guardian-popup");
+var guardianNewsPics = document.querySelector("#news-guardian .thumbnail");
 
-function showPopUp() {
-	event.preventDefault();
-	target = event.target.closest("article");
-	id = target.id;
-	console.log(id);
-	popUp.classList.toggle("loader");
-	popUp.classList.toggle("hidden");
-}
+// Events
 
-
-var guardianSeaOttersTemplate = document.querySelector("#news-seaotters-guardian");
-var guardianPolarBearsTemplate = document.querySelector("#news-polarbears-guardian");
-var guardianSlothsTemplate = document.querySelector("#news-sloths-guardian");
-var popUpTemplate = document.querySelector("#popUpTemplate");
-
-
-//Event handlers
-
+//search button
+searchButton.addEventListener('click', searchPress)
+//search form
+searchField.addEventListener('click', searchForm)
+// menu
+guardianButton.addEventListener('click', populateNews);
+//for Popup
 main.addEventListener("click", showPopUp);
+// close Popup
+closePopUp.addEventListener('click', quitPopUp);
 
-guardianSeaOttersButton.addEventListener('click', getGuardianSeaOtterNews);
-guardianPolarBearsButton.addEventListener('click', getGuardianPolarBearsNews);
-guardianSlothsButton.addEventListener('click', getGuardianSlothsNews);
+// store URL in the variable
+var url_default="http://content.guardianapis.com/search?show-fields=trailText&show-tags=keyword&from-date=2016-01-01&api-key=06d1d01a-bd75-44b8-81d6-ef9c7256c9c7"
+var url_trumbnail = url_default+"&show-fields=thumbnail"
+var url_trailText = url_default+"&show-fields=url_trailText"
+// storing request in the variable
+var dataGuardian=jQuery.getJSON(url_trumbnail);
+var dataGuardian_text=jQuery.getJSON(url_trailText);
 
-//main.addEventListener('click', openPopUpWindow);
 
 
-function getGuardianSeaOtterNews(event) {
-	//event.preventDefault();
-	var url = "http://content.guardianapis.com/search?show-tags=keyword&from-date=2016-01-01&q=sea%20otter&show-fields=thumbnail&api-key=06d1d01a-bd75-44b8-81d6-ef9c7256c9c7";
-	jQuery.getJSON(url, populateGuardianSeaOtterNews);
+// Functions
+function searchPress(event){
+	event.preventDefault();
+	search.classList.toggle("active");
 }
 
-function populateGuardianSeaOtterNews(json) {
-	main.innerHTML = '';
-	var guardianSeaOttersTemplateFn = Handlebars.compile(guardianSeaOttersTemplate.innerHTML);
-	main.innerHTML = guardianSeaOttersTemplateFn(json);
+function searchForm(event){
+	return url_default=url_default+searchItem.innerHTML;
+	console.log(url_default)
 }
 
- function openPopUpWindow(event) {
- 	console.log('clici!!');
- 	//event.preventDefault();
- 	var url = "http://content.guardianapis.com/search?show-tags=keyword&from-date=2016-01-01&q=sea%20otter&show-fields=thumbnail&api-key=06d1d01a-bd75-44b8-81d6-ef9c7256c9c7";
- 	jQuery.getJSON(url, getDetails);
- }
+function populateNews(json) {
+ 	event.preventDefault();
+ 	main.innerHTML = '';
+ 	var guardianNewsFn = Handlebars.compile(guardianNews.innerHTML);
+ 	main.innerHTML = guardianNewsFn(dataGuardian.responseJSON);
+ };
+
+function showPopUp(event) {
+	event.preventDefault();
+	var target = event.target.closest('article');
+
+	//console.log('targetId', dataGuardian.responseJSON.response.results[0])
+	popUp.classList.remove("loader"); 
+	popUp.classList.toggle("hidden");
+	//popUpContainer.innerHTML = '';
+	//console.log(popUpContainer);
+	dataGuardian_text.responseJSON.response.results.forEach(function (x) {
+		if (target.id == x.id) {
+			//console.log(x.id, target.id)
+			var guardianPopUpFn  = Handlebars.compile(guardianPopUp.innerHTML);
+			console.log(popUpContainer);
+			popUpContainer.innerHTML = guardianPopUpFn(x);
+		};
+	});
+
+}
+//console.log(dataGuardian);
 
 
-
-function getGuardianPolarBearsNews(event) {
-	//event.preventDefault();
-	var url = "http://content.guardianapis.com/search?show-tags=keyword&from-date=2016-01-01&q=polar%20bear&show-fields=thumbnail&api-key=06d1d01a-bd75-44b8-81d6-ef9c7256c9c7";
-	jQuery.getJSON(url, populateGuardianPolarBearsNews);
+function quitPopUp(event) {
+	popUp.classList.toggle("hidden");	
 }
 
-function populateGuardianPolarBearsNews(json) {
-	main.innerHTML = '';
-	var guardianPolarBearsTemplateFn = Handlebars.compile(guardianSeaOttersTemplate.innerHTML);
-	main.innerHTML = guardianPolarBearsTemplateFn(json);
-}
-
-function getGuardianSlothsNews(event) {
-	//event.preventDefault();
-	var url = "http://content.guardianapis.com/search?show-tags=keyword&from-date=2016-01-01&q=sloth&show-fields=thumbnail&api-key=06d1d01a-bd75-44b8-81d6-ef9c7256c9c7";
-	jQuery.getJSON(url, populateGuardianSlothsNews);
-}
-
-function populateGuardianSlothsNews(json) {
-	main.innerHTML = '';
-	var guardianSlothsTemplateFn = Handlebars.compile(guardianSlothsTemplate.innerHTML);
-	main.innerHTML = guardianSlothsTemplateFn(json);
-}

@@ -9,62 +9,56 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/html5bp.css">
   <link rel="stylesheet" href="css/feedr.css">
-
 </head>
 
 <body>
   <header>
     <div class="container">
-      <a href="#"><h1>Feedr</h1></a>
+      <a href="#"><h1>Feeder</h1></a>
       <nav>
         <ul>
-          <li><a href="#">List of feeds by animal</a>
+          <li><a href="#">News Source</a>
             <ul>
-                <li id='button-seaotters-guardian'><a href="#">Sea Otters</a></li>
-                <li id='button-polarbears-guardian'><a href="#">Polar Bears</a></li>
-                <li id='button-sloths-guardian'><a href="#">Sloth</a></li>
+                <li id='button-guardian'><a href="#">Guardian</a></li>
             </ul>
           </li>
         </ul>
+
+
+
+
         <div id="search">
           <input type="text" name="name" value="">
-          <a href="#"><img src="images/search.png" alt="" /></a>
+            <a href="#"><img src="images/search.png" alt="" /></a>
+        </div>
+          <div>
+           <form id="searchForm" class=>
+            <textarea id="formInput" type="text"></textarea>
+             <a href="#" id="searchButton"><img src="images/search.png" alt="" /></a>
+           </form>
         </div>
       </nav>
       <div class="clearfix"></div>
     </div>
   </header>
-  
 
-<script id='popUp' type="text/x-handlebars-template">
-  
-  {{#each response.results}}
-  
   <div id="popUp" class="loader hidden">
     <a href="#" class="closePopUp">X</a>
-    <div class="container">
-      <h1>{{webTitle}}</h1>
-      <p>
-        {{webTitle}}
-      </p>
-      <a href="#" class="popUpAction" target="_blank">{{webTitle}}</a>
-    </div>
+    <div class="container"></div>
   </div>
-  
-  {{/each}}
 
-</script>
+
 <div id="main" class="container"></div>
-<script id='news-seaotters-guardian' type="text/x-handlebars-template">
-
+<script id='news-guardian' type="text/x-handlebars-template">
 
   {{#each response.results}}
-    <article class="article" id="{{id}}">
+    <article class="article" id="{{id}}"> 
       <div class="thumbnail">
         <img src="{{fields.thumbnail}}" alt="icon" />
       </div>
       <div class="articleContent">
           <a href="#"><h3>{{webTitle}}</h3></a>
+          <h6>{{sectionId}}</h6>
       </div>
       <div class="clearfix"></div>
     </article>
@@ -72,51 +66,23 @@
 
 </script>
 
-<script id="popUpTemplate" type="text/x-handlebars-template">
-  
-      <h1>{{webTitle}}</h1>
-      <p>
-        {{webTitle}}
-      </p>
-      <a href="{{url}}" class="popUpAction" target="_blank">Read more from source</a>
-</script>
-
-
-<script id='news-polarbears-guardian' type="text/x-handlebars-template">
-
-  {{#each response.results}}
-    <article class="article" id="{{id}}">
-      <div class="thumbnail">
-        <img src="{{fields.thumbnail}}" alt="icon" />
-      </div>
-      <div class="articleContent">
-          <a href="#"><h3>{{webTitle}}</h3></a>
-      </div>
-      <div class="clearfix"></div>
-    </article>
-  {{/each}}
-
-</script>
-
-<script id='news-sloths-guardian' type="text/x-handlebars-template">
-
-  {{#each response.results}}
-    <article class="article" id="{{id}}">
-      <div class="thumbnail">
-        <img src="{{fields.thumbnail}}" alt="icon" />
-      </div>
-      <div class="articleContent">
-          <a href="#"><h3>{{webTitle}}</h3></a>
-      </div>
-      <div class="clearfix"></div>
-    </article>
-  {{/each}}
-
+<script id='news-guardian-popup' type="text/x-handlebars-template"> 
+    <div>
+      <img src="{{fields.thumbnail}}" alt="" />
+    </div>
+    <h1>{{webTitle}}</h1>
+    <a href="{{webUrl}}" class="popUpAction" target="_blank">Read more from source</a>
+    <h6>{{fields.trailText}}</h6  >
 </script>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="js/feedr.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/feedr.js"></script>
 
 </body>
 </html>
+
+
+
+
+
