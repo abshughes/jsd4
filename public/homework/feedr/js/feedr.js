@@ -29,7 +29,7 @@ main.addEventListener("click", showPopUp);
 closePopUp.addEventListener('click', quitPopUp);
 
 // store URL in the variable
-var url_default="http://content.guardianapis.com/search?show-fields=trailText&show-tags=keyword&from-date=2016-01-01&api-key=06d1d01a-bd75-44b8-81d6-ef9c7256c9c7"
+var url_default="https://content.guardianapis.com/search?show-fields=trailText&show-tags=keyword&from-date=2016-01-01&api-key=06d1d01a-bd75-44b8-81d6-ef9c7256c9c7"
 var url_trumbnail = url_default+"&show-fields=thumbnail"
 var url_trailText = url_default+"&show-fields=url_trailText"
 // storing request in the variable
