@@ -17,10 +17,10 @@ var guardianNewsPics = document.querySelector("#news-guardian .thumbnail");
 
 // Events
 
-//search button
-searchButton.addEventListener('click', searchPress)
-//search form
-searchField.addEventListener('click', searchForm)
+// //search button
+// searchButton.addEventListener('click', searchPress)
+// //search form
+// searchField.addEventListener('click', searchForm)
 // menu
 guardianButton.addEventListener('click', populateNews);
 //for Popup
@@ -39,15 +39,15 @@ var dataGuardian_text=jQuery.getJSON(url_trailText);
 
 
 // Functions
-function searchPress(event){
-	event.preventDefault();
-	search.classList.toggle("active");
-}
+// function searchPress(event){
+// 	event.preventDefault();
+// 	search.classList.toggle("active");
+// }
 
-function searchForm(event){
-	return url_default=url_default+searchItem.innerHTML;
-	console.log(url_default)
-}
+// function searchForm(event){
+// 	return url_default=url_default+searchItem.innerHTML;
+// 	console.log(url_default)
+// }
 
 function populateNews(json) {
  	event.preventDefault();

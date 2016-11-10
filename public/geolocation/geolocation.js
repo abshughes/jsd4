@@ -42,7 +42,7 @@ function createGoogleMap(latitude, longitude){
  //  	};
  	var options={
   		center: {lat: latitude, lng: longitude},
-  		zoom: 15
+  		zoom: 150
   	};
  
   	// map is a conctructor which expects element and options
