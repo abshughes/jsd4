@@ -18,14 +18,14 @@ app.use(express.static(__dirname + '/public'));
 // //routes
 // router.get('/', function(req, res) {
 // 	res.render('home');
-// };
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views')
+// // };
+// app.set('view engine', 'ejs');
+// app.set('views', __dirname + '/views')
 
 // routes
-router.get('/', function(req, res) {
-    res.render('home');
-});
+// router.get('/', function(req, res) {
+//     res.render('home');
+// });
 
 app.use('/', router);
 
